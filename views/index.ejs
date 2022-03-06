@@ -1,0 +1,29 @@
+<%- include('./partials/headar.ejs') %>
+    <link rel="stylesheet" href="/css/estilo.css">
+   </head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    
+    <div class="container">
+        <hr>
+        <h1>Perguntas</h1>
+        <hr>
+        <a href="/perguntar" class="btn btn-secondary">Perguntar</a>
+        <hr>
+        <% perguntas.forEach(pergunta =>{ %>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <h3><%=pergunta.titulo %></h3>
+                </div>
+                <div class="card-footer">
+                    <!-- linkando  o botão  responder para cada link da pergunta com id da pergunta-->
+                   <a href="/pergunta/ <%= pergunta.id %>"><button class="btn btn-secondary">Responder</button></a>
+                </div>
+            </div>
+          
+        <% }) %>
+    </div>
+
+</body>
+</html>
